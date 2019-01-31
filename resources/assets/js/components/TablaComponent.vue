@@ -1,5 +1,23 @@
 <template>
-  <b-table striped hover :items="items" :fields="fields"></b-table>
+  <b-container>
+    <b-table show-empty
+             stacked="md"
+             :items="items"
+             :fields="fields"
+             :current-page="currentPage"
+             :per-page="perPage"
+             :filter="filter"
+             :sort-by.sync="sortBy"
+             :sort-desc.sync="sortDesc"
+             :sort-direction="sortDirection"
+             @filtered="onFiltered"
+    ></b-table>
+
+    <h6>Small</h6>
+      <b-pagination size="sm" :total-rows="100" v-model="currentPage" :per-page="10">
+      </b-pagination>
+  </b-container>
+  <br>
 </template>
 
 <script>
@@ -10,29 +28,65 @@ export default {
     return {
        fields: [
         {
-          key: 'first_name',
+          key: 'nivel',
           sortable: true
         },
         {
-          key: 'last_name',
-          sortable: false
+          key: 'acuerdo',
+          sortable: true
         },
         {
-          key: 'age',
-          label: 'Person age',
+          key: 'estado',
           sortable: true,
           // Variant applies to the whole column, including the header and footer
           //variant: 'danger'
-        }
+        },
+        {
+          key: 'nombreFiscal',
+          sortable: true
+        },
+        {
+          key: 'nombreUnidad',
+          sortable: true
+        },
+        {
+          key: 'numFiscal',
+          sortable: true
+        },
+        {
+          key: 'numCarpeta',
+          sortable: true
+        },
+        {
+          key: 'estadoCarpeta',
+          sortable: true
+        },
+        {
+          key: 'fechaInicio',
+          sortable: true
+        },
       ],
-      items: [
-        { isActive: true, age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-        { isActive: false, age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-        { isActive: false, age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-        { isActive: true, age: 38, first_name: 'Jami', last_name: 'Carney' }
-      ]
+      items: [ ],
+      currentPage: 1,
+      perPage: 5,
+      totalRows: items.length,
+      pageOptions: [ 5, 10, 15 ],
+      sortBy: null,
+      sortDesc: false,
+      sortDirection: 'asc',
+      filter: null,
+      modalInfo: { title: '', content: '' }
 
     }
+
+  },
+  props:['carpetasprop'],
+
+  mounted(){
+    if(this.carpetasprop){
+      this.items =this.carpetasprop;
+    }
   }
+
 }
 </script>

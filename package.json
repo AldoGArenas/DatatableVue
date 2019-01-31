@@ -21,6 +21,6 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.0.0-rc.11",
-        "vuex": "^3.0.1"
+        "fancygrid": "^1.7.59"
     }
 }

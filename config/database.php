@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('UIPJ_CONNECTION', 'uipj'),
 
     /*
     |--------------------------------------------------------------------------
@@ -32,28 +32,94 @@ return [
     */
 
     'connections' => [
+        'uipj' => [
+            'driver' => 'mysql',
+            'host' => env('UIPJ_HOST', '127.0.0.1'),
+            'port' => env('UIPJ_PORT', '3306'),
+            'database' => env('UIPJ_DATABASE', 'forge'),
+            'username' => env('UIPJ_USERNAME', 'forge'),
+            'password' => env('UIPJ_PASSWORD', ''),
+            'unix_socket' => env('UIPJ_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
 
+        'component' => [
+            'driver' => 'mysql',
+            'host' => env('COMPONENT_HOST', '192.108.24.155'),
+            'port' => env('COMPONENT_PORT', '3306'),
+            'database' => env('COMPONENT_DATABASE', 'forge'),
+            'username' => env('COMPONENT_USERNAME', 'forge'),
+            'password' => env('COMPONENT_PASSWORD', ''),
+            'unix_socket' => env('COMPONENT_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+
+        'uatuipj' => [
+            'driver' => 'mysql',
+            'host' => env('UATUIPJ_HOST', '192.108.24.155'),
+            'port' => env('UATUIPJ_PORT', '3306'),
+            'database' => env('UATUIPJ_DATABASE', 'forge'),
+            'username' => env('UATUIPJ_USERNAME', 'forge'),
+            'password' => env('UATUIPJ_PASSWORD', ''),
+            'unix_socket' => env('UATUIPJ_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+
+        'desaparecidos' => [
+            'driver' => 'mysql',
+            'host'      => env('DB_HOST_DESAPARECIDOS', '127.0.0.1'),
+            'port'      => env('DB_PORT_DESAPARECIDOS', '3306'),
+            'database'  => env('DB_DATABASE_DESAPARECIDOS', 'forge'),
+            'username'  => env('DB_USERNAME_DESAPARECIDOS', 'forge'),
+            'password'  => env('DB_PASSWORD_DESAPARECIDOS' ,''),
+            'unix_socket' => env('DB_SOCKET_DESAPARECIDOS', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+        'vrr' => [
+            'driver' => 'mysql',
+            'host'      => env('DB_HOST_VRR', '127.0.0.1'),
+            'port'      => env('DB_PORT_VRR', '3306'),
+            'database'  => env('DB_DATABASE_VRR', 'forge'),
+            'username'  => env('DB_USERNAME_VRR', 'forge'),
+            'password'  => env('DB_PASSWORD_VRR' ,''),
+            'unix_socket' => env('DB_SOCKET_VRR', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+        'legacy' => [
+            'driver' => 'sqlsrv',
+            'host' => env('LEGACY_HOST', '192.108.24.157'),
+            'port' => env('LEGACY_PORT', '1433'),
+            'database' => env('LEGACY_DATABASE', ''),
+            'username' => env('LEGACY_USERNAME', 'reader'),
+            'password' => env('LEGACY_PASSWORD', 'Read3R_1'),
+            'charset' => 'utf8',
+            'prefix' => '',
+        ],
         'sqlite' => [
             'driver' => 'sqlite',
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
         ],
-
-        'mysql' => [
-            'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'unix_socket' => env('DB_SOCKET', ''),
-            'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
-            'prefix' => '',
-            'strict' => true,
-            'engine' => null,
-        ],
-
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
@@ -66,7 +132,6 @@ return [
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
-
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'host' => env('DB_HOST', 'localhost'),
@@ -77,7 +142,6 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
         ],
-
     ],
 
     /*

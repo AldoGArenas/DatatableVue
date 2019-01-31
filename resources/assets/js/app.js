@@ -8,7 +8,7 @@
 require('./bootstrap');
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
-import store from "./store";
+// import store from "./store";
 
 
 
@@ -26,5 +26,5 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('tablacomponent',require('./components/TablaComponent.vue'))
 const app = new Vue({
     el: '#app',
-    store
+    // store
 });

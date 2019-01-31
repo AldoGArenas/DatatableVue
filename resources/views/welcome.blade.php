@@ -34,7 +34,9 @@
         <b-alert variant="success" :show="showAlert">
           Hello @{{name}}
         </b-alert> --}}
-        <tablacomponent/>
+        <tablacomponent :carpetasprop='carpetas'>
+
+        </tablacomponent>
 
       </b-container>
     </div>
@@ -47,7 +49,9 @@
        new Vue({
         el: "#datos",
         data: {
-          name: 'Chirrion'
+          name: 'Chirrion',
+          carpetas: {!!$carpetas!!},
+          currentPage:1
         },
         components:{
            'tablacomponent': tablacomponent
@@ -56,6 +60,9 @@
           showAlert() {
             return this.name.length > 4 ? true : false;
           }
+        },
+        mounted(){
+
         }
       })
     </script>

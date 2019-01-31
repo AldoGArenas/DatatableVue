@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/carpetas', 'CarpetaController@index');
+Route::get('/grid', 'CarpetaController@index2');
+Route::get('/get-carpetas', 'CarpetaController@getCarpetas')->name('get.carpetas');
