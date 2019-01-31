@@ -34,7 +34,7 @@
         <b-alert variant="success" :show="showAlert">
           Hello @{{name}}
         </b-alert> --}}
-        <tablacomponent :carpetasprop='carpetas'>
+        <tablacomponent :itemsprop='carpetas':fieldsprop="fields">
 
         </tablacomponent>
 
@@ -51,6 +51,85 @@
         data: {
           name: 'Chirrion',
           carpetas: {!!$carpetas!!},
+          fields:[{
+          key: 'numCarpeta',
+          sortable: true
+        },
+        {
+          key: 'unidad',
+          sortable: true
+        },
+        {
+          key: 'clave',
+          sortable: true,
+          // Variant applies to the whole column, including the header and footer
+          //variant: 'danger'
+        },
+        {
+          key: 'municipio',
+          sortable: true
+        },
+        {
+          key: 'numFiscal',
+          sortable: true
+        },
+        {
+          key: 'numConsecutivo',
+          sortable: true
+        },
+        {
+          key: 'nombreFiscal',
+          sortable: true
+        },
+        {
+          key: 'fechaInicio',
+          sortable: true
+        },
+        {
+          key: 'estadoCarpeta',
+          sortable: true
+        },
+        {
+          key: 'fechaCaptura',
+          sortable: true
+        },
+        {
+          key: 'delito',
+          sortable: true
+        },
+        {
+          key: 'nombre',
+          sortable: true
+        },
+        {
+          key: 'edad',
+          sortable: true
+        },
+        {
+          key: 'sexo',
+          sortable: true
+        },
+        {
+          key: 'estadoOrigen',
+          sortable: true
+        },
+        {
+          key: 'telefono',
+          sortable: true
+        },
+        {
+          key: 'ocupacion',
+          sortable: true
+        },
+        {
+          key: 'escolaridad',
+          sortable: true
+        },
+        {
+          key: 'subtipoInvolucrado',
+          sortable: true
+        },
+        ],
           currentPage:1
         },
         components:{
