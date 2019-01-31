@@ -14,6 +14,17 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'UIPJ'),
+    'UIPJ_DATABASE'=>env('UIPJ_DATABASE'),
+    'COMPONENT_DATABASE'=>env('COMPONENT_DATABASE'),
+    'COMPONENT_CONNECTION'=>env('COMPONENT_CONNECTION'),
+    'UIPJ_CONNECTION'=>env('UIPJ_CONNECTION'),
+    'DB_DATABASE_DESAPARECIDOS'=>env('DB_DATABASE_DESAPARECIDOS'),
+    'UATUIPJ_DATABASE'=>env('UATUIPJ_DATABASE'),
+    'VRR_IP'=>env('VRR_IP'),
+    'VRR_CONNECTION'=>env('DB_CONNECTION_VRR'),
+    'VRR_DATABASE' => env('DB_DATABASE_VRR'),
+
 
     /*
     |--------------------------------------------------------------------------
