@@ -34,7 +34,7 @@
         <b-alert variant="success" :show="showAlert">
           Hello @{{name}}
         </b-alert> --}}
-        <tablacomponent :itemsprop='carpetas':fieldsprop="fields">
+        <tablacomponent :fieldsprop="fields">
 
         </tablacomponent>
 
@@ -50,7 +50,6 @@
         el: "#datos",
         data: {
           name: 'Chirrion',
-          carpetas: {!!$carpetas!!},
           fields:[{
           key: 'numCarpeta',
           sortable: true

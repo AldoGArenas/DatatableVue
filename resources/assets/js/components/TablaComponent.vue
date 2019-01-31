@@ -48,6 +48,9 @@
     <b-table show-empty
              stacked="md"
              :items="items"
+             :dark="dark"
+             :striped="striped"
+             :small="small"
              :fields="fields"
              :current-page="currentPage"
              :per-page="perPage"
@@ -57,6 +60,8 @@
              :sort-direction="sortDirection"
              @filtered="onFiltered"
     >
+
+
       <template slot="name" slot-scope="row">{{row.value.first}} {{row.value.last}}</template>
       <template slot="isActive" slot-scope="row">{{row.value?'Yes :)':'No :('}}</template>
       <template slot="actions" slot-scope="row">
@@ -97,6 +102,14 @@ export default {
     return {
       fields: [],
       items: [],
+      striped: true,
+     bordered: false,
+     outlined: false,
+     small: true,
+     hover: false,
+     dark: false,
+     fixed: false,
+     footClone: false,
       currentPage: 1,
       perPage: 5,
       totalRows: 0,
@@ -132,7 +145,19 @@ export default {
       // Trigger pagination to update the number of buttons/pages due to filtering
       this.totalRows = filteredItems.length
       this.currentPage = 1
-    }
+    },
+    getCarpet(){
+        // Here we don't set isBusy prop, so busy state will be handled by table itself
+        // this.isBusy = true
+        const urlGetCarpetas =  'get-carpetas' ;
+    axios.get(urlGetCarpetas).then(data=>  {
+        this.items = data.data
+        console.log(data);
+        // Here we could override the busy state, setting isBusy to false
+        // this.isBusy = false
+        return(data.data)
+      })
+	   },
   },
   mounted(){
     if(this.itemsprop){
@@ -142,6 +167,7 @@ export default {
     if(this.fieldsprop){
       this.fields =this.fieldsprop;
     }
+    this.getCarpet()
   }
 }
 </script>
